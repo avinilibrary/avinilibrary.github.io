@@ -3,87 +3,1770 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>کتابخانه شهید آوینی</title>
+
+    <title>انجمن کتابداری پایگاه بسیج شهید آوینی</title>
+
+    <meta name="description"
+          content="وب‌سایت رسمی انجمن کتابداری پایگاه بسیج شهید آوینی تهرانسر">
+
+    <meta name="theme-color" content="#071b16">
+
     <style>
+        /* =========================
+           تنظیمات پایه
+        ========================== */
+
+        @import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700;800;900&display=swap');
+
+        :root {
+            --primary: #0b5d3b;
+            --primary-dark: #063b27;
+            --secondary: #c99a3b;
+            --gold-light: #e8c76a;
+            --dark: #071b16;
+            --dark-2: #0c2920;
+            --light: #f7f8f5;
+            --white: #ffffff;
+            --text: #17231e;
+            --muted: #66736d;
+            --border: rgba(11, 93, 59, 0.12);
+            --shadow: 0 15px 50px rgba(0, 0, 0, 0.08);
+            --radius: 22px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
         body {
-
-            font-family: Tahoma, sans-serif;
-            direction: rtl;
-            text-align: right;
-            margin: 20px;
-               background: #4AA54E;
-
+            font-family: "Vazirmatn", Tahoma, sans-serif;
+            background: var(--light);
+            color: var(--text);
+            line-height: 1.9;
+            overflow-x: hidden;
         }
-        section {
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        img {
+            max-width: 100%;
+            display: block;
+        }
+
+        .container {
+            width: min(1180px, 92%);
+            margin: auto;
+        }
+
+        /* =========================
+           نوار بالا
+        ========================== */
+
+        .topbar {
+            background: var(--dark);
+            color: rgba(255,255,255,.85);
+            font-size: 13px;
+            padding: 8px 0;
+        }
+
+        .topbar-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .topbar span {
+            display: flex;
+            align-items: center;
+            gap: 7px;
+        }
+
+        /* =========================
+           هدر
+        ========================== */
+
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: rgba(255,255,255,.92);
+            backdrop-filter: blur(18px);
+            border-bottom: 1px solid rgba(0,0,0,.06);
+        }
+
+        .nav {
+            min-height: 78px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 25px;
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 13px;
+        }
+
+        /*
+           ==============================
+           لوگوی انجمن
+           ==============================
+
+           فایل لوگو را با نام:
+           logo.png
+
+           کنار همین فایل HTML قرار بده.
+
+           اگر نام فایل چیز دیگری بود، فقط
+           logo.png را در خط زیر تغییر بده.
+        */
+
+        .brand-logo {
+            width: 52px;
+            height: 52px;
+            object-fit: contain;
+            border-radius: 14px;
+        }
+
+        .brand-text {
+            display: flex;
+            flex-direction: column;
+            line-height: 1.4;
+        }
+
+        .brand-text strong {
+            color: var(--primary);
+            font-size: 16px;
+            font-weight: 800;
+        }
+
+        .brand-text small {
+            color: var(--muted);
+            font-size: 11px;
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 7px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            padding: 10px 13px;
+            border-radius: 10px;
+            font-size: 14px;
+            font-weight: 500;
+            transition: .25s;
+        }
+
+        .nav-links a:hover {
+            background: rgba(11,93,59,.08);
+            color: var(--primary);
+        }
+
+        .nav-cta {
+            background: var(--primary) !important;
+            color: white !important;
+            padding: 10px 18px !important;
+        }
+
+        .nav-cta:hover {
+            background: var(--primary-dark) !important;
+            transform: translateY(-2px);
+        }
+
+        .menu-btn {
+            display: none;
+            border: 0;
+            background: transparent;
+            font-size: 28px;
+            cursor: pointer;
+            color: var(--dark);
+        }
+
+        /* =========================
+           هیرو
+        ========================== */
+
+        .hero {
+            position: relative;
+            min-height: 650px;
+            display: flex;
+            align-items: center;
+            overflow: hidden;
+            color: white;
+            background:
+                radial-gradient(circle at 15% 20%, rgba(201,154,59,.22), transparent 28%),
+                radial-gradient(circle at 85% 70%, rgba(20,130,87,.22), transparent 30%),
+                linear-gradient(135deg, #04130f, #0b3b29 55%, #06271b);
+        }
+
+        .hero::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            opacity: .07;
+            background-image:
+                linear-gradient(45deg, #fff 1px, transparent 1px);
+            background-size: 35px 35px;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 760px;
+            padding: 80px 0;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px 15px;
+            border: 1px solid rgba(255,255,255,.18);
+            background: rgba(255,255,255,.07);
+            backdrop-filter: blur(10px);
+            border-radius: 100px;
+            font-size: 13px;
+            margin-bottom: 22px;
+        }
+
+        .hero h1 {
+            font-size: clamp(32px, 5vw, 62px);
+            line-height: 1.35;
+            font-weight: 900;
+            margin-bottom: 20px;
+        }
+
+        .hero h1 span {
+            color: var(--gold-light);
+        }
+
+        .hero p {
+            color: rgba(255,255,255,.78);
+            max-width: 650px;
+            font-size: 17px;
+            line-height: 2.2;
             margin-bottom: 30px;
-            padding: 20px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-               background: #E7EBC2;
-
         }
-               ul {
-            list-style-type: disc;
-            padding-left: 20px;
 
+        .hero-buttons {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
         }
-        .contact {
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            padding: 13px 23px;
+            border-radius: 13px;
+            font-size: 14px;
+            font-weight: 700;
+            transition: .3s;
+        }
+
+        .btn-primary {
+            background: var(--secondary);
+            color: #1d1708;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 30px rgba(201,154,59,.25);
+        }
+
+        .btn-outline {
+            color: white;
+            border: 1px solid rgba(255,255,255,.25);
+            background: rgba(255,255,255,.05);
+        }
+
+        .btn-outline:hover {
+            background: rgba(255,255,255,.12);
+        }
+
+        .hero-symbol {
+            position: absolute;
+            left: 4%;
+            bottom: -70px;
+            width: 380px;
+            height: 380px;
+            border: 1px solid rgba(255,255,255,.08);
+            border-radius: 50%;
+        }
+
+        .hero-symbol::before,
+        .hero-symbol::after {
+            content: "";
+            position: absolute;
+            inset: 45px;
+            border: 1px solid rgba(255,255,255,.06);
+            border-radius: 50%;
+        }
+
+        .hero-symbol::after {
+            inset: 100px;
+        }
+
+        /* =========================
+           آمار
+        ========================== */
+
+        .stats-wrap {
+            margin-top: -50px;
+            position: relative;
+            z-index: 5;
+        }
+
+        .stats {
+            background: white;
+            border-radius: 24px;
+            box-shadow: var(--shadow);
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            overflow: hidden;
+        }
+
+        .stat {
+            text-align: center;
+            padding: 28px 15px;
+            border-left: 1px solid #eee;
+        }
+
+        .stat:last-child {
+            border-left: none;
+        }
+
+        .stat strong {
+            display: block;
+            color: var(--primary);
+            font-size: 29px;
+            font-weight: 900;
+        }
+
+        .stat span {
+            color: var(--muted);
+            font-size: 13px;
+        }
+
+        /* =========================
+           بخش‌ها
+        ========================== */
+
+        section {
+            padding: 95px 0;
+        }
+
+        .section-head {
+            max-width: 700px;
+            margin-bottom: 45px;
+        }
+
+        .eyebrow {
+            color: var(--secondary);
+            font-size: 13px;
+            font-weight: 800;
+            margin-bottom: 8px;
+        }
+
+        .section-head h2 {
+            font-size: clamp(27px, 4vw, 40px);
+            line-height: 1.5;
+            color: var(--dark);
+            margin-bottom: 10px;
+        }
+
+        .section-head p {
+            color: var(--muted);
+            font-size: 15px;
+        }
+
+        /* =========================
+           درباره
+        ========================== */
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 55px;
+            align-items: center;
+        }
+
+        .about-card {
+            padding: 35px;
+            background: white;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            border: 1px solid var(--border);
+        }
+
+        .about-card p {
+            color: #59655f;
+            font-size: 15px;
+            margin-bottom: 18px;
+        }
+
+        .quote {
+            border-right: 4px solid var(--secondary);
+            padding-right: 18px;
+            color: var(--primary);
+            font-weight: 700;
+        }
+
+        .info-list {
+            display: grid;
+            gap: 15px;
+        }
+
+        .info-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+            padding: 18px;
+            background: white;
+            border: 1px solid var(--border);
+            border-radius: 16px;
+        }
+
+        .info-icon {
+            width: 45px;
+            height: 45px;
+            flex: 0 0 45px;
+            display: grid;
+            place-items: center;
+            background: rgba(11,93,59,.09);
+            color: var(--primary);
+            border-radius: 12px;
+            font-size: 20px;
+        }
+
+        .info-item strong {
+            display: block;
+            margin-bottom: 2px;
+            font-size: 14px;
+        }
+
+        .info-item span {
+            color: var(--muted);
+            font-size: 13px;
+        }
+
+        /* =========================
+           اعضا
+        ========================== */
+
+        .members {
+            background: #eef2ee;
+        }
+
+        .member-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 18px;
+        }
+
+        .member {
+            background: white;
+            border-radius: 20px;
+            padding: 25px 20px;
+            text-align: center;
+            border: 1px solid var(--border);
+            transition: .3s;
+        }
+
+        .member:hover {
+            transform: translateY(-7px);
+            box-shadow: var(--shadow);
+        }
+
+        .member-avatar {
+            width: 75px;
+            height: 75px;
+            margin: 0 auto 15px;
+            display: grid;
+            place-items: center;
+            border-radius: 50%;
+            background:
+                linear-gradient(135deg, var(--primary), var(--primary-dark));
+            color: white;
+            font-size: 25px;
+            font-weight: 900;
+        }
+
+        .member h3 {
+            font-size: 16px;
+            margin-bottom: 4px;
+        }
+
+        .member p {
+            color: var(--primary);
+            font-size: 12px;
+            font-weight: 600;
+        }
+
+        .member.leader {
+            border-top: 4px solid var(--secondary);
+        }
+
+        /* =========================
+           فعالیت‌ها
+        ========================== */
+
+        .activity-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .activity {
+            position: relative;
+            padding: 30px;
+            background: white;
+            border: 1px solid var(--border);
+            border-radius: 20px;
+            transition: .3s;
+            overflow: hidden;
+        }
+
+        .activity:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow);
+        }
+
+        .activity-number {
+            position: absolute;
+            left: 20px;
+            top: 10px;
+            font-size: 60px;
+            font-weight: 900;
+            color: rgba(11,93,59,.05);
+        }
+
+        .activity-icon {
+            width: 55px;
+            height: 55px;
+            display: grid;
+            place-items: center;
+            background: rgba(201,154,59,.13);
+            color: #9a711f;
+            border-radius: 15px;
+            font-size: 23px;
+            margin-bottom: 18px;
+        }
+
+        .activity h3 {
+            font-size: 17px;
+            margin-bottom: 8px;
+        }
+
+        .activity p {
+            color: var(--muted);
+            font-size: 13px;
+        }
+
+        /* =========================
+           مأموریت
+        ========================== */
+
+        .mission {
+            background:
+                linear-gradient(135deg, #061b13, #0a432c);
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .mission-content {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            max-width: 800px;
+            margin: auto;
+        }
+
+        .mission h2 {
+            font-size: clamp(28px, 4vw, 43px);
+            margin-bottom: 15px;
+        }
+
+        .mission p {
+            color: rgba(255,255,255,.75);
+            font-size: 15px;
+            line-height: 2.3;
+        }
+
+        /* =========================
+           کانال‌ها
+        ========================== */
+
+        .channels {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 22px;
+        }
+
+        .channel {
+            padding: 32px;
+            border-radius: 22px;
+            background: white;
+            border: 1px solid var(--border);
+            box-shadow: 0 10px 35px rgba(0,0,0,.04);
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .channel-icon {
+            width: 65px;
+            height: 65px;
+            flex: 0 0 65px;
+            display: grid;
+            place-items: center;
+            border-radius: 18px;
+            background: var(--primary);
+            color: white;
+            font-size: 26px;
+            font-weight: 900;
+        }
+
+        .channel h3 {
+            font-size: 16px;
+            margin-bottom: 4px;
+        }
+
+        .channel p {
+            color: var(--muted);
+            font-size: 12px;
+            margin-bottom: 10px;
+            direction: ltr;
             text-align: right;
         }
-        .contact p {
-            margin-bottom: 5px;
+
+        .channel a {
+            color: var(--primary);
+            font-size: 12px;
+            font-weight: 800;
+        }
+
+        /* =========================
+           موقعیت
+        ========================== */
+
+        .location-box {
+            background: var(--dark);
+            color: white;
+            border-radius: 26px;
+            padding: 45px;
+            display: grid;
+            grid-template-columns: 1fr auto;
+            gap: 30px;
+            align-items: center;
+        }
+
+        .location-box h2 {
+            font-size: 28px;
+            margin-bottom: 10px;
+        }
+
+        .location-box p {
+            color: rgba(255,255,255,.7);
+            font-size: 14px;
+        }
+
+        .location-icon {
+            width: 90px;
+            height: 90px;
+            display: grid;
+            place-items: center;
+            border-radius: 50%;
+            background: rgba(201,154,59,.12);
+            border: 1px solid rgba(201,154,59,.3);
+            color: var(--gold-light);
+            font-size: 35px;
+        }
+
+        /* =========================
+           فوتر
+        ========================== */
+
+        footer {
+            background: #04100c;
+            color: white;
+            padding: 55px 0 20px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 1.5fr 1fr 1fr;
+            gap: 50px;
+            padding-bottom: 40px;
+        }
+
+        footer h3 {
+            font-size: 16px;
+            margin-bottom: 15px;
+        }
+
+        footer p,
+        footer li,
+        footer a {
+            color: rgba(255,255,255,.58);
+            font-size: 13px;
+        }
+
+        footer ul {
+            list-style: none;
+            display: grid;
+            gap: 8px;
+        }
+
+        footer a:hover {
+            color: white;
+        }
+
+        .footer-brand {
+            display: flex;
+            gap: 12px;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+
+        .footer-brand img {
+            width: 50px;
+            height: 50px;
+            object-fit: contain;
+        }
+
+        .copyright {
+            border-top: 1px solid rgba(255,255,255,.08);
+            padding-top: 18px;
+            text-align: center;
+            color: rgba(255,255,255,.4);
+            font-size: 11px;
+        }
+
+        /* =========================
+           دکمه بالا
+        ========================== */
+
+        .back-top {
+            position: fixed;
+            left: 20px;
+            bottom: 20px;
+            width: 45px;
+            height: 45px;
+            border: 0;
+            border-radius: 13px;
+            background: var(--primary);
+            color: white;
+            font-size: 18px;
+            cursor: pointer;
+            opacity: 0;
+            visibility: hidden;
+            transition: .3s;
+            z-index: 999;
+        }
+
+        .back-top.show {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        /* =========================
+           واکنش‌گرا
+        ========================== */
+
+        @media (max-width: 950px) {
+
+            .nav-links {
+                position: absolute;
+                top: 78px;
+                right: 4%;
+                left: 4%;
+                background: white;
+                padding: 12px;
+                border-radius: 18px;
+                box-shadow: var(--shadow);
+                display: none;
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .nav-links a {
+                display: block;
+            }
+
+            .menu-btn {
+                display: block;
+            }
+
+            .member-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .activity-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media (max-width: 700px) {
+
+            .topbar {
+                display: none;
+            }
+
+            .hero {
+                min-height: 610px;
+            }
+
+            .hero-content {
+                padding: 60px 0;
+            }
+
+            .stats {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .stat:nth-child(2) {
+                border-left: none;
+            }
+
+            .stat:nth-child(-n+2) {
+                border-bottom: 1px solid #eee;
+            }
+
+            .about-grid {
+                grid-template-columns: 1fr;
+                gap: 25px;
+            }
+
+            .member-grid,
+            .activity-grid,
+            .channels {
+                grid-template-columns: 1fr;
+            }
+
+            .location-box {
+                grid-template-columns: 1fr;
+                text-align: center;
+                padding: 30px;
+            }
+
+            .location-icon {
+                margin: auto;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+
+            section {
+                padding: 70px 0;
+            }
+        }
+
+        @media (max-width: 430px) {
+
+            .brand-text strong {
+                font-size: 13px;
+            }
+
+            .brand-text small {
+                font-size: 9px;
+            }
+
+            .brand-logo {
+                width: 45px;
+                height: 45px;
+            }
+
+            .hero h1 {
+                font-size: 31px;
+            }
+
+            .hero p {
+                font-size: 14px;
+            }
+
+            .stats {
+                grid-template-columns: 1fr 1fr;
+            }
         }
     </style>
 </head>
+
 <body>
-    <header>
-	<center><h1>کتابخانه پایگاه بسیج شهید آوینی</h1></center>
-    </header>
 
-    <section>
-<center><h1>معرفی اعضا</h1></center>
-        <p>در این بخش می‌توانید با اعضای کتابخانه آشنا شوید.</p>
-        <ul>
-            <li>امیرحسین نیک اندیش ( رئیس انجمن کتابداری )</li>
-            <li>مهدی رادفر ( معاون اجرایی )</li>
-            <li>محمد طاها علیزاده ( مسئول اداری)</li>
+<!-- =========================
+     نوار بالایی
+========================== -->
+
+<div class="topbar">
+    <div class="container topbar-inner">
+        <span>📚 انجمن کتابداری پایگاه بسیج شهید آوینی</span>
+        <span>📍 تهران، تهرانسر، شهرک دریا</span>
+    </div>
+</div>
+
+
+<!-- =========================
+     هدر
+========================== -->
+
+<header>
+    <div class="container nav">
+
+        <a href="#home" class="brand">
+
+            <!-- لوگوی انجمن -->
+            <img src="logo.png"
+                 alt="لوگوی انجمن کتابداری پایگاه بسیج شهید آوینی"
+                 class="brand-logo">
+
+            <div class="brand-text">
+                <strong>انجمن کتابداری</strong>
+                <small>پایگاه بسیج شهید آوینی</small>
+            </div>
+
+        </a>
+
+        <button class="menu-btn" onclick="toggleMenu()" aria-label="منو">
+            ☰
+        </button>
+
+        <ul class="nav-links" id="navLinks">
+            <li><a href="#home">خانه</a></li>
+            <li><a href="#about">درباره انجمن</a></li>
+            <li><a href="#members">اعضا</a></li>
+            <li><a href="#activities">فعالیت‌ها</a></li>
+            <li><a href="#channels">کانال‌ها</a></li>
+            <li><a href="#location">موقعیت</a></li>
+            <li>
+                <a href="#channels" class="nav-cta">
+                    ارتباط با ما
+                </a>
+            </li>
         </ul>
-    </section>
 
-    <section>
-<center><h1>کار های ما</h1></center>
-        <p>در اینجا برخی از فعالیت‌های کتابخانه را مشاهده می‌کنید:</p>
-        <ul>
-            <li>ارائه خدمات امانت کتاب</li>
-            <li>برگزاری جلسات کتابخوانی</li>
-            <li>امور کتاب دیجیتال</li>
-        </ul>
-    </section>
-
-    <section>
-<center><h1>درباره ما</h1></center>
-        <p>کتابخانه شهید آوینی با هدف ترویج فرهنگ مطالعه و دسترسی آسان به اطلاعات تاسیس شده است.</p>
-        <p>ما تلاش می‌کنیم محیطی آرام و پویا برای مطالعه و تحقیق شما را فراهم کنیم.</p>
-   </ul>
-    </section>
+    </div>
+</header>
 
 
-<section>
-<center><h1>اخبار</h1></center>
- </ul>
-    </section>
+<!-- =========================
+     Hero
+========================== -->
+
+<main>
+
+<section class="hero" id="home">
+
+    <div class="container">
+
+        <div class="hero-content">
+
+            <div class="hero-badge">
+                ✦ تأسیس در سال ۱۴۰۳
+            </div>
+
+            <h1>
+                انجمن کتابداری
+                <br>
+                <span>پایگاه بسیج شهید آوینی</span>
+            </h1>
+
+            <p>
+                جمعی جوان و دغدغه‌مند برای ترویج فرهنگ کتاب و کتابخوانی،
+                خدمت‌رسانی جهادی و رساندن یار مهربان به دست کسانی که
+                بیشتر از همه به آن نیاز دارند.
+            </p>
+
+            <div class="hero-buttons">
+
+                <a href="#about" class="btn btn-primary">
+                    آشنایی با انجمن
+                </a>
+
+                <a href="#channels" class="btn btn-outline">
+                    کانال‌های رسمی انجمن
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="hero-symbol"></div>
+
+</section>
 
 
+<!-- =========================
+     آمار
+========================== -->
 
-    </section>
-    <section class="contact">
-<center><h1>ارتباط با ما</h1></center>
-        <p>آدرس: [تهرانسر ، شهرک دریا ، بلوار اروندرود ، مسجد الغدیر ، پایگاه بسیج شهید آوینی]</p>
-        
-    </section>
+<div class="stats-wrap">
 
-    <footer>
-        <p>&copy; 2024 کتابخانه شهید آوینی</p>
-    </footer>
+    <div class="container">
+
+        <div class="stats">
+
+            <div class="stat">
+                <strong>۱۴۰۳</strong>
+                <span>سال تأسیس انجمن</span>
+            </div>
+
+            <div class="stat">
+                <strong>۷</strong>
+                <span>عضو فعال انجمن</span>
+            </div>
+
+            <div class="stat">
+                <strong>۲</strong>
+                <span>کانال رسمی ایتا</span>
+            </div>
+
+            <div class="stat">
+                <strong>∞</strong>
+                <span>هدف؛ خدمت و کتابخوانی</span>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- =========================
+     درباره انجمن
+========================== -->
+
+<section id="about">
+
+    <div class="container">
+
+        <div class="section-head">
+            <div class="eyebrow">درباره ما</div>
+
+            <h2>
+                کتاب، آغاز یک مسیر روشن
+            </h2>
+
+            <p>
+                انجمن کتابداری پایگاه بسیج شهید آوینی
+                با هدف ساماندهی کتابخانه و گسترش فرهنگ مطالعه
+                و خدمت‌رسانی فرهنگی فعالیت می‌کند.
+            </p>
+        </div>
+
+
+        <div class="about-grid">
+
+            <div class="about-card">
+
+                <p>
+                    این انجمن در سال ۱۴۰۳ با حضور اعضای جوان و فعال
+                    شکل گرفت تا کتابخانه پایگاه بسیج شهید آوینی
+                    به محیطی پویا، منظم و اثرگذار برای اهالی منطقه
+                    تبدیل شود.
+                </p>
+
+                <p>
+                    فعالیت‌های انجمن تنها به نگهداری کتاب‌ها محدود
+                    نمی‌شود؛ بلکه اعضای انجمن تلاش می‌کنند با اجرای
+                    فعالیت‌های فرهنگی و جهادی، کتاب و امکانات آموزشی
+                    را به دست افراد نیازمند برسانند.
+                </p>
+
+                <div class="quote">
+                    «هر کتاب می‌تواند آغاز یک تغییر بزرگ باشد.»
+                </div>
+
+            </div>
+
+
+            <div class="info-list">
+
+                <div class="info-item">
+                    <div class="info-icon">📚</div>
+
+                    <div>
+                        <strong>حوزه فعالیت</strong>
+                        <span>
+                            کتابداری، ترویج مطالعه و فعالیت‌های فرهنگی
+                        </span>
+                    </div>
+                </div>
+
+
+                <div class="info-item">
+                    <div class="info-icon">🤝</div>
+
+                    <div>
+                        <strong>رویکرد</strong>
+                        <span>
+                            جهادی، فرهنگی، داوطلبانه و خدمت‌رسان
+                        </span>
+                    </div>
+                </div>
+
+
+                <div class="info-item">
+                    <div class="info-icon">📍</div>
+
+                    <div>
+                        <strong>محل فعالیت</strong>
+                        <span>
+                            مسجد معظم الغدیر، شهرک دریا، تهرانسر
+                        </span>
+                    </div>
+                </div>
+
+
+                <div class="info-item">
+                    <div class="info-icon">🗓️</div>
+
+                    <div>
+                        <strong>سال تأسیس</strong>
+                        <span>۱۴۰۳</span>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     اعضای انجمن
+========================== -->
+
+<section class="members" id="members">
+
+    <div class="container">
+
+        <div class="section-head">
+            <div class="eyebrow">تیم انجمن</div>
+
+            <h2>
+                اعضای انجمن کتابداری
+            </h2>
+
+            <p>
+                هفت عضو فعال که در کنار یکدیگر برای توسعه
+                فعالیت‌های کتابخانه و خدمت‌رسانی فرهنگی تلاش می‌کنند.
+            </p>
+        </div>
+
+
+        <div class="member-grid">
+
+            <div class="member leader">
+
+                <div class="member-avatar">ا</div>
+
+                <h3>امیرحسین نیک‌اندیش</h3>
+
+                <p>رئیس انجمن</p>
+
+            </div>
+
+
+            <div class="member">
+
+                <div class="member-avatar">م</div>
+
+                <h3>مهدی رادفر</h3>
+
+                <p>
+                    جانشین رئیس انجمن<br>
+                    مسئول کتابخانه
+                </p>
+
+            </div>
+
+
+            <div class="member">
+
+                <div class="member-avatar">ع</div>
+
+                <h3>علی‌اکبر صالحی</h3>
+
+                <p>مسئول کتابخانه</p>
+
+            </div>
+
+
+            <div class="member">
+
+                <div class="member-avatar">م</div>
+
+                <h3>میثاق وفایی</h3>
+
+                <p>مسئول اجرایی (جهادی)</p>
+
+            </div>
+
+
+            <div class="member">
+
+                <div class="member-avatar">م</div>
+
+                <h3>محمدحسن جوپایی</h3>
+
+                <p>مسئول اجرایی (جهادی)</p>
+
+            </div>
+
+
+            <div class="member">
+
+                <div class="member-avatar">ا</div>
+
+                <h3>امیرمهدی ساغرچی</h3>
+
+                <p>مسئول اجرایی (جهادی)</p>
+
+            </div>
+
+
+            <div class="member">
+
+                <div class="member-avatar">ع</div>
+
+                <h3>علیرضا رنجبر</h3>
+
+                <p>مسئول رسانه</p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     فعالیت‌ها
+========================== -->
+
+<section id="activities">
+
+    <div class="container">
+
+        <div class="section-head">
+            <div class="eyebrow">فعالیت‌های ما</div>
+
+            <h2>
+                از کتابخانه تا میدان خدمت
+            </h2>
+
+            <p>
+                بخشی از فعالیت‌هایی که اعضای انجمن به صورت مستمر
+                و جهادی دنبال می‌کنند.
+            </p>
+        </div>
+
+
+        <div class="activity-grid">
+
+            <div class="activity">
+
+                <span class="activity-number">۰۱</span>
+
+                <div class="activity-icon">🧹</div>
+
+                <h3>ساماندهی کتابخانه</h3>
+
+                <p>
+                    مرتب‌سازی، ساماندهی و رسیدگی مستمر به کتابخانه
+                    و آماده‌سازی محیطی مناسب برای مراجعه‌کنندگان.
+                </p>
+
+            </div>
+
+
+            <div class="activity">
+
+                <span class="activity-number">۰۲</span>
+
+                <div class="activity-icon">✨</div>
+
+                <h3>غبارروبی هفتگی</h3>
+
+                <p>
+                    نظافت و غبارروبی منظم کتابخانه و مراقبت از
+                    منابع و فضای فرهنگی آن.
+                </p>
+
+            </div>
+
+
+            <div class="activity">
+
+                <span class="activity-number">۰۳</span>
+
+                <div class="activity-icon">📖</div>
+
+                <h3>اهدای کتاب</h3>
+
+                <p>
+                    جمع‌آوری و اهدای کتاب به افراد و خانواده‌های
+                    نیازمند با هدف گسترش دسترسی به کتاب.
+                </p>
+
+            </div>
+
+
+            <div class="activity">
+
+                <span class="activity-number">۰۴</span>
+
+                <div class="activity-icon">🎒</div>
+
+                <h3>لوازم‌التحریر برای محرومان</h3>
+
+                <p>
+                    تهیه و خرید لوازم‌التحریر و کمک به دانش‌آموزان
+                    کم‌برخوردار.
+                </p>
+
+            </div>
+
+
+            <div class="activity">
+
+                <span class="activity-number">۰۵</span>
+
+                <div class="activity-icon">💚</div>
+
+                <h3>جمع‌آوری کمک‌های مردمی</h3>
+
+                <p>
+                    جمع‌آوری کمک‌های مالی برای خرید کتاب و
+                    تأمین نیازهای فرهنگی افراد محروم.
+                </p>
+
+            </div>
+
+
+            <div class="activity">
+
+                <span class="activity-number">۰۶</span>
+
+                <div class="activity-icon">👧</div>
+
+                <h3>حمایت از کودکان</h3>
+
+                <p>
+                    اهدای کتاب و اقلام آموزشی به کودکان محروم و
+                    کودکان بدسرپرست در قالب فعالیت‌های جهادی.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     ماموریت
+========================== -->
+
+<section class="mission">
+
+    <div class="container">
+
+        <div class="mission-content">
+
+            <div class="eyebrow">
+                رسالت انجمن
+            </div>
+
+            <h2>
+                برای اینکه هیچ کودکی از کتاب دور نماند
+            </h2>
+
+            <p>
+                ما باور داریم دسترسی به کتاب و آموزش می‌تواند
+                آینده یک انسان را تغییر دهد. انجمن کتابداری
+                پایگاه بسیج شهید آوینی تلاش می‌کند با کمک اعضا،
+                خیرین و مردم، سهمی در این مسیر داشته باشد.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     کانال‌ها
+========================== -->
+
+<section id="channels">
+
+    <div class="container">
+
+        <div class="section-head">
+
+            <div class="eyebrow">رسانه‌های رسمی</div>
+
+            <h2>
+                همراه انجمن باشید
+            </h2>
+
+            <p>
+                اخبار، فعالیت‌ها و برنامه‌های انجمن را
+                از طریق کانال‌های رسمی دنبال کنید.
+            </p>
+
+        </div>
+
+
+        <div class="channels">
+
+
+            <div class="channel">
+
+                <div class="channel-icon">
+                    📚
+                </div>
+
+                <div>
+
+                    <h3>
+                        کانال رسمی انجمن کتابداری
+                    </h3>
+
+                    <p>
+                        @anjoman_ketabdari_shahid_avini
+                    </p>
+
+                    <a
+                        href="https://eitaa.com/anjoman_ketabdari_shahid_avini"
+                        target="_blank">
+                        ورود به کانال ←
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <div class="channel">
+
+                <div class="channel-icon">
+                    🎥
+                </div>
+
+                <div>
+
+                    <h3>
+                        رسانه انجمن کتابداری
+                    </h3>
+
+                    <p>
+                        @resaneh_anjomaneketabdari
+                    </p>
+
+                    <a
+                        href="https://eitaa.com/resaneh_anjomaneketabdari"
+                        target="_blank">
+                        ورود به کانال ←
+                    </a>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     موقعیت
+========================== -->
+
+<section id="location">
+
+    <div class="container">
+
+        <div class="location-box">
+
+            <div>
+
+                <div class="eyebrow">
+                    محل فعالیت
+                </div>
+
+                <h2>
+                    پایگاه بسیج شهید آوینی
+                </h2>
+
+                <p>
+                    تهران، تهرانسر، شهرک دریا،
+                    بلوار اروندرود، مسجد معظم الغدیر
+                </p>
+
+            </div>
+
+            <div class="location-icon">
+                📍
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+</main>
+
+
+<!-- =========================
+     Footer
+========================== -->
+
+<footer>
+
+    <div class="container">
+
+        <div class="footer-grid">
+
+            <div>
+
+                <div class="footer-brand">
+
+                    <img
+                        src="logo.png"
+                        alt="لوگوی انجمن">
+
+                    <strong>
+                        انجمن کتابداری<br>
+                        پایگاه بسیج شهید آوینی
+                    </strong>
+
+                </div>
+
+                <p>
+                    انجمنی فرهنگی و جهادی با هدف ترویج فرهنگ
+                    کتاب و کتابخوانی و خدمت‌رسانی به اقشار
+                    محروم جامعه.
+                </p>
+
+            </div>
+
+
+            <div>
+
+                <h3>دسترسی سریع</h3>
+
+                <ul>
+
+                    <li>
+                        <a href="#about">درباره انجمن</a>
+                    </li>
+
+                    <li>
+                        <a href="#members">اعضای انجمن</a>
+                    </li>
+
+                    <li>
+                        <a href="#activities">فعالیت‌ها</a>
+                    </li>
+
+                    <li>
+                        <a href="#location">موقعیت</a>
+                    </li>
+
+                </ul>
+
+            </div>
+
+
+            <div>
+
+                <h3>رسانه‌های انجمن</h3>
+
+                <ul>
+
+                    <li>
+                        <a
+                            href="https://eitaa.com/anjoman_ketabdari_shahid_avini"
+                            target="_blank">
+                            کانال رسمی انجمن
+                        </a>
+                    </li>
+
+                    <li>
+                        <a
+                            href="https://eitaa.com/resaneh_anjomaneketabdari"
+                            target="_blank">
+                            رسانه انجمن
+                        </a>
+                    </li>
+
+                </ul>
+
+            </div>
+
+        </div>
+
+
+        <div class="copyright">
+
+            © ۱۴۰۳ تا ۱۴۰۵ —
+            انجمن کتابداری پایگاه بسیج شهید آوینی
+            | تمامی حقوق محفوظ است.
+
+        </div>
+
+    </div>
+
+</footer>
+
+
+<!-- =========================
+     دکمه بازگشت به بالا
+========================== -->
+
+<button
+    class="back-top"
+    id="backTop"
+    onclick="window.scrollTo({top:0, behavior:'smooth'})"
+    aria-label="بازگشت به بالا">
+    ↑
+</button>
+
+
+<script>
+
+    /* =========================
+       منوی موبایل
+    ========================== */
+
+    function toggleMenu() {
+
+        const menu = document.getElementById("navLinks");
+
+        menu.classList.toggle("active");
+
+    }
+
+
+    /* بستن منو پس از کلیک */
+
+    document.querySelectorAll(".nav-links a").forEach(link => {
+
+        link.addEventListener("click", () => {
+
+            document
+                .getElementById("navLinks")
+                .classList.remove("active");
+
+        });
+
+    });
+
+
+    /* =========================
+       دکمه بازگشت به بالا
+    ========================== */
+
+    const backTop =
+        document.getElementById("backTop");
+
+    window.addEventListener("scroll", () => {
+
+        if (window.scrollY > 500) {
+
+            backTop.classList.add("show");
+
+        } else {
+
+            backTop.classList.remove("show");
+
+        }
+
+    });
+
+
+    /* =========================
+       انیمیشن ورود عناصر
+    ========================== */
+
+    const observer =
+        new IntersectionObserver(
+            (entries) => {
+
+                entries.forEach(entry => {
+
+                    if (entry.isIntersecting) {
+
+                        entry.target.style.opacity = "1";
+                        entry.target.style.transform = "translateY(0)";
+
+                    }
+
+                });
+
+            },
+            {
+                threshold: 0.12
+            }
+        );
+
+
+    document
+        .querySelectorAll(".member, .activity, .info-item, .channel")
+        .forEach(element => {
+
+            element.style.opacity = "0";
+            element.style.transform = "translateY(20px)";
+            element.style.transition =
+                "opacity .6s ease, transform .6s ease";
+
+            observer.observe(element);
+
+        });
+
+</script>
+
 </body>
 </html>
