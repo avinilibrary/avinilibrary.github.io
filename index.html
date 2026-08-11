@@ -12,11 +12,6 @@
     <meta name="theme-color" content="#071b16">
 
     <style>
-        /* =========================
-           تنظیمات پایه
-        ========================== */
-
-        @import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700;800;900&display=swap');
 
         :root {
             --primary: #0b5d3b;
@@ -42,7 +37,7 @@
         }
 
         body {
-            font-family: "Vazirmatn", Tahoma, sans-serif;
+            font-family: Tahoma, Arial, sans-serif;
             background: var(--light);
             color: var(--text);
             line-height: 1.9;
@@ -115,19 +110,19 @@
             gap: 13px;
         }
 
-        /*
-           ==============================
+        /* ==========================================
            لوگوی انجمن
-           ==============================
 
-           فایل لوگو را با نام:
-           logo.png
+           فقط لینک تصویر لوگو را داخل src قرار بده.
 
-           کنار همین فایل HTML قرار بده.
+           مثال:
+           src="https://example.com/logo.png"
 
-           اگر نام فایل چیز دیگری بود، فقط
-           logo.png را در خط زیر تغییر بده.
-        */
+           یا:
+           src="https://example.com/logo.jpg"
+
+           یا هر لینک مستقیم دیگری به تصویر.
+        =========================================== */
 
         .brand-logo {
             width: 52px;
@@ -501,7 +496,7 @@
             background:
                 linear-gradient(135deg, var(--primary), var(--primary-dark));
             color: white;
-            font-size: 25px;
+            font-size: 27px;
             font-weight: 900;
         }
 
@@ -913,6 +908,7 @@
                 grid-template-columns: 1fr 1fr;
             }
         }
+
     </style>
 </head>
 
@@ -923,10 +919,19 @@
 ========================== -->
 
 <div class="topbar">
+
     <div class="container topbar-inner">
-        <span>📚 انجمن کتابداری پایگاه بسیج شهید آوینی</span>
-        <span>📍 تهران، تهرانسر، شهرک دریا</span>
+
+        <span>
+            📚 انجمن کتابداری پایگاه بسیج شهید آوینی
+        </span>
+
+        <span>
+            📍 تهران، تهرانسر، شهرک دریا
+        </span>
+
     </div>
+
 </div>
 
 
@@ -935,41 +940,101 @@
 ========================== -->
 
 <header>
+
     <div class="container nav">
 
         <a href="#home" class="brand">
 
-            <!-- لوگوی انجمن -->
-            <img src="logo.png"
-                 alt="لوگوی انجمن کتابداری پایگاه بسیج شهید آوینی"
-                 class="brand-logo">
+            <!--
+            =========================================
+            لینک لوگو را فقط در src زیر قرار بده.
+
+            مثال:
+            src="https://example.com/image.png"
+
+            هیچ نام فایل خاصی لازم نیست.
+            =========================================
+            -->
+
+            <img
+                src="لینک_تصویر_لوگو_را_اینجا_قرار_دهید"
+                alt="لوگوی انجمن کتابداری پایگاه بسیج شهید آوینی"
+                class="brand-logo"
+            >
 
             <div class="brand-text">
-                <strong>انجمن کتابداری</strong>
-                <small>پایگاه بسیج شهید آوینی</small>
+
+                <strong>
+                    انجمن کتابداری
+                </strong>
+
+                <small>
+                    پایگاه بسیج شهید آوینی
+                </small>
+
             </div>
 
         </a>
 
-        <button class="menu-btn" onclick="toggleMenu()" aria-label="منو">
+
+        <button
+            class="menu-btn"
+            onclick="toggleMenu()"
+            aria-label="منو">
+
             ☰
+
         </button>
 
+
         <ul class="nav-links" id="navLinks">
-            <li><a href="#home">خانه</a></li>
-            <li><a href="#about">درباره انجمن</a></li>
-            <li><a href="#members">اعضا</a></li>
-            <li><a href="#activities">فعالیت‌ها</a></li>
-            <li><a href="#channels">کانال‌ها</a></li>
-            <li><a href="#location">موقعیت</a></li>
+
+            <li>
+                <a href="#home">
+                    خانه
+                </a>
+            </li>
+
+            <li>
+                <a href="#about">
+                    درباره انجمن
+                </a>
+            </li>
+
+            <li>
+                <a href="#members">
+                    اعضا
+                </a>
+            </li>
+
+            <li>
+                <a href="#activities">
+                    فعالیت‌ها
+                </a>
+            </li>
+
+            <li>
+                <a href="#channels">
+                    کانال‌ها
+                </a>
+            </li>
+
+            <li>
+                <a href="#location">
+                    موقعیت
+                </a>
+            </li>
+
             <li>
                 <a href="#channels" class="nav-cta">
                     ارتباط با ما
                 </a>
             </li>
+
         </ul>
 
     </div>
+
 </header>
 
 
@@ -986,13 +1051,15 @@
         <div class="hero-content">
 
             <div class="hero-badge">
-                ✦ تأسیس در سال ۱۴۰۳
+                ✦ تأسیس در سال ۱۴۰۵
             </div>
 
             <h1>
                 انجمن کتابداری
                 <br>
-                <span>پایگاه بسیج شهید آوینی</span>
+                <span>
+                    پایگاه بسیج شهید آوینی
+                </span>
             </h1>
 
             <p>
@@ -1033,23 +1100,51 @@
         <div class="stats">
 
             <div class="stat">
-                <strong>۱۴۰۳</strong>
-                <span>سال تأسیس انجمن</span>
+
+                <strong>
+                    ۱۴۰۵
+                </strong>
+
+                <span>
+                    سال تأسیس انجمن
+                </span>
+
             </div>
 
             <div class="stat">
-                <strong>۷</strong>
-                <span>عضو فعال انجمن</span>
+
+                <strong>
+                    ۷
+                </strong>
+
+                <span>
+                    عضو فعال انجمن
+                </span>
+
             </div>
 
             <div class="stat">
-                <strong>۲</strong>
-                <span>کانال رسمی ایتا</span>
+
+                <strong>
+                    ۲
+                </strong>
+
+                <span>
+                    کانال رسمی ایتا
+                </span>
+
             </div>
 
             <div class="stat">
-                <strong>∞</strong>
-                <span>هدف؛ خدمت و کتابخوانی</span>
+
+                <strong>
+                    ∞
+                </strong>
+
+                <span>
+                    هدف؛ خدمت و کتابخوانی
+                </span>
+
             </div>
 
         </div>
@@ -1068,7 +1163,10 @@
     <div class="container">
 
         <div class="section-head">
-            <div class="eyebrow">درباره ما</div>
+
+            <div class="eyebrow">
+                درباره ما
+            </div>
 
             <h2>
                 کتاب، آغاز یک مسیر روشن
@@ -1079,6 +1177,7 @@
                 با هدف ساماندهی کتابخانه و گسترش فرهنگ مطالعه
                 و خدمت‌رسانی فرهنگی فعالیت می‌کند.
             </p>
+
         </div>
 
 
@@ -1087,7 +1186,7 @@
             <div class="about-card">
 
                 <p>
-                    این انجمن در سال ۱۴۰۳ با حضور اعضای جوان و فعال
+                    این انجمن در سال ۱۴۰۵ با حضور اعضای جوان و فعال
                     شکل گرفت تا کتابخانه پایگاه بسیج شهید آوینی
                     به محیطی پویا، منظم و اثرگذار برای اهالی منطقه
                     تبدیل شود.
@@ -1110,48 +1209,86 @@
             <div class="info-list">
 
                 <div class="info-item">
-                    <div class="info-icon">📚</div>
+
+                    <div class="info-icon">
+                        📚
+                    </div>
 
                     <div>
-                        <strong>حوزه فعالیت</strong>
+
+                        <strong>
+                            حوزه فعالیت
+                        </strong>
+
                         <span>
                             کتابداری، ترویج مطالعه و فعالیت‌های فرهنگی
                         </span>
+
                     </div>
+
                 </div>
 
 
                 <div class="info-item">
-                    <div class="info-icon">🤝</div>
+
+                    <div class="info-icon">
+                        🤝
+                    </div>
 
                     <div>
-                        <strong>رویکرد</strong>
+
+                        <strong>
+                            رویکرد
+                        </strong>
+
                         <span>
                             جهادی، فرهنگی، داوطلبانه و خدمت‌رسان
                         </span>
+
                     </div>
+
                 </div>
 
 
                 <div class="info-item">
-                    <div class="info-icon">📍</div>
+
+                    <div class="info-icon">
+                        📍
+                    </div>
 
                     <div>
-                        <strong>محل فعالیت</strong>
+
+                        <strong>
+                            محل فعالیت
+                        </strong>
+
                         <span>
                             مسجد معظم الغدیر، شهرک دریا، تهرانسر
                         </span>
+
                     </div>
+
                 </div>
 
 
                 <div class="info-item">
-                    <div class="info-icon">🗓️</div>
+
+                    <div class="info-icon">
+                        🗓️
+                    </div>
 
                     <div>
-                        <strong>سال تأسیس</strong>
-                        <span>۱۴۰۳</span>
+
+                        <strong>
+                            سال تأسیس
+                        </strong>
+
+                        <span>
+                            ۱۴۰۵
+                        </span>
+
                     </div>
+
                 </div>
 
             </div>
@@ -1172,7 +1309,10 @@
     <div class="container">
 
         <div class="section-head">
-            <div class="eyebrow">تیم انجمن</div>
+
+            <div class="eyebrow">
+                تیم انجمن
+            </div>
 
             <h2>
                 اعضای انجمن کتابداری
@@ -1182,27 +1322,43 @@
                 هفت عضو فعال که در کنار یکدیگر برای توسعه
                 فعالیت‌های کتابخانه و خدمت‌رسانی فرهنگی تلاش می‌کنند.
             </p>
+
         </div>
 
 
         <div class="member-grid">
 
+
+            <!-- رئیس انجمن -->
+
             <div class="member leader">
 
-                <div class="member-avatar">ا</div>
+                <div class="member-avatar">
+                    👑
+                </div>
 
-                <h3>امیرحسین نیک‌اندیش</h3>
+                <h3>
+                    امیرحسین نیک‌اندیش
+                </h3>
 
-                <p>رئیس انجمن</p>
+                <p>
+                    رئیس انجمن
+                </p>
 
             </div>
 
 
+            <!-- جانشین رئیس و مسئول کتابخانه -->
+
             <div class="member">
 
-                <div class="member-avatar">م</div>
+                <div class="member-avatar">
+                    🏛️
+                </div>
 
-                <h3>مهدی رادفر</h3>
+                <h3>
+                    مهدی رادفر
+                </h3>
 
                 <p>
                     جانشین رئیس انجمن<br>
@@ -1212,59 +1368,100 @@
             </div>
 
 
+            <!-- مسئول کتابخانه -->
+
             <div class="member">
 
-                <div class="member-avatar">ع</div>
+                <div class="member-avatar">
+                    📚
+                </div>
 
-                <h3>علی‌اکبر صالحی</h3>
+                <h3>
+                    علی‌اکبر صالحی
+                </h3>
 
-                <p>مسئول کتابخانه</p>
+                <p>
+                    مسئول کتابخانه
+                </p>
 
             </div>
 
 
+            <!-- مسئول اجرایی -->
+
             <div class="member">
 
-                <div class="member-avatar">م</div>
+                <div class="member-avatar">
+                    🛠️
+                </div>
 
-                <h3>میثاق وفایی</h3>
+                <h3>
+                    میثاق وفایی
+                </h3>
 
-                <p>مسئول اجرایی (جهادی)</p>
+                <p>
+                    مسئول اجرایی (جهادی)
+                </p>
 
             </div>
 
 
+            <!-- مسئول اجرایی -->
+
             <div class="member">
 
-                <div class="member-avatar">م</div>
+                <div class="member-avatar">
+                    🛠️
+                </div>
 
-                <h3>محمدحسن جوپایی</h3>
+                <h3>
+                    محمدحسن جوپایی
+                </h3>
 
-                <p>مسئول اجرایی (جهادی)</p>
+                <p>
+                    مسئول اجرایی (جهادی)
+                </p>
 
             </div>
 
 
+            <!-- مسئول اجرایی -->
+
             <div class="member">
 
-                <div class="member-avatar">ا</div>
+                <div class="member-avatar">
+                    🛠️
+                </div>
 
-                <h3>امیرمهدی ساغرچی</h3>
+                <h3>
+                    امیرمهدی ساغرچی
+                </h3>
 
-                <p>مسئول اجرایی (جهادی)</p>
+                <p>
+                    مسئول اجرایی (جهادی)
+                </p>
 
             </div>
 
 
+            <!-- مسئول رسانه -->
+
             <div class="member">
 
-                <div class="member-avatar">ع</div>
+                <div class="member-avatar">
+                    📱
+                </div>
 
-                <h3>علیرضا رنجبر</h3>
+                <h3>
+                    علیرضا رنجبر
+                </h3>
 
-                <p>مسئول رسانه</p>
+                <p>
+                    مسئول رسانه
+                </p>
 
             </div>
+
 
         </div>
 
@@ -1282,7 +1479,10 @@
     <div class="container">
 
         <div class="section-head">
-            <div class="eyebrow">فعالیت‌های ما</div>
+
+            <div class="eyebrow">
+                فعالیت‌های ما
+            </div>
 
             <h2>
                 از کتابخانه تا میدان خدمت
@@ -1292,18 +1492,26 @@
                 بخشی از فعالیت‌هایی که اعضای انجمن به صورت مستمر
                 و جهادی دنبال می‌کنند.
             </p>
+
         </div>
 
 
         <div class="activity-grid">
 
+
             <div class="activity">
 
-                <span class="activity-number">۰۱</span>
+                <span class="activity-number">
+                    ۰۱
+                </span>
 
-                <div class="activity-icon">🧹</div>
+                <div class="activity-icon">
+                    🧹
+                </div>
 
-                <h3>ساماندهی کتابخانه</h3>
+                <h3>
+                    ساماندهی کتابخانه
+                </h3>
 
                 <p>
                     مرتب‌سازی، ساماندهی و رسیدگی مستمر به کتابخانه
@@ -1315,11 +1523,17 @@
 
             <div class="activity">
 
-                <span class="activity-number">۰۲</span>
+                <span class="activity-number">
+                    ۰۲
+                </span>
 
-                <div class="activity-icon">✨</div>
+                <div class="activity-icon">
+                    ✨
+                </div>
 
-                <h3>غبارروبی هفتگی</h3>
+                <h3>
+                    غبارروبی هفتگی
+                </h3>
 
                 <p>
                     نظافت و غبارروبی منظم کتابخانه و مراقبت از
@@ -1331,11 +1545,17 @@
 
             <div class="activity">
 
-                <span class="activity-number">۰۳</span>
+                <span class="activity-number">
+                    ۰۳
+                </span>
 
-                <div class="activity-icon">📖</div>
+                <div class="activity-icon">
+                    📖
+                </div>
 
-                <h3>اهدای کتاب</h3>
+                <h3>
+                    اهدای کتاب
+                </h3>
 
                 <p>
                     جمع‌آوری و اهدای کتاب به افراد و خانواده‌های
@@ -1347,11 +1567,17 @@
 
             <div class="activity">
 
-                <span class="activity-number">۰۴</span>
+                <span class="activity-number">
+                    ۰۴
+                </span>
 
-                <div class="activity-icon">🎒</div>
+                <div class="activity-icon">
+                    🎒
+                </div>
 
-                <h3>لوازم‌التحریر برای محرومان</h3>
+                <h3>
+                    لوازم‌التحریر برای محرومان
+                </h3>
 
                 <p>
                     تهیه و خرید لوازم‌التحریر و کمک به دانش‌آموزان
@@ -1363,11 +1589,17 @@
 
             <div class="activity">
 
-                <span class="activity-number">۰۵</span>
+                <span class="activity-number">
+                    ۰۵
+                </span>
 
-                <div class="activity-icon">💚</div>
+                <div class="activity-icon">
+                    💚
+                </div>
 
-                <h3>جمع‌آوری کمک‌های مردمی</h3>
+                <h3>
+                    جمع‌آوری کمک‌های مردمی
+                </h3>
 
                 <p>
                     جمع‌آوری کمک‌های مالی برای خرید کتاب و
@@ -1379,11 +1611,17 @@
 
             <div class="activity">
 
-                <span class="activity-number">۰۶</span>
+                <span class="activity-number">
+                    ۰۶
+                </span>
 
-                <div class="activity-icon">👧</div>
+                <div class="activity-icon">
+                    👧
+                </div>
 
-                <h3>حمایت از کودکان</h3>
+                <h3>
+                    حمایت از کودکان
+                </h3>
 
                 <p>
                     اهدای کتاب و اقلام آموزشی به کودکان محروم و
@@ -1391,6 +1629,7 @@
                 </p>
 
             </div>
+
 
         </div>
 
@@ -1441,7 +1680,9 @@
 
         <div class="section-head">
 
-            <div class="eyebrow">رسانه‌های رسمی</div>
+            <div class="eyebrow">
+                رسانه‌های رسمی
+            </div>
 
             <h2>
                 همراه انجمن باشید
@@ -1569,12 +1810,14 @@
 
         <div class="footer-grid">
 
+
             <div>
 
                 <div class="footer-brand">
 
+                    <!-- همان لینک لوگو -->
                     <img
-                        src="logo.png"
+                        src="لینک_تصویر_لوگو_را_اینجا_قرار_دهید"
                         alt="لوگوی انجمن">
 
                     <strong>
@@ -1595,24 +1838,34 @@
 
             <div>
 
-                <h3>دسترسی سریع</h3>
+                <h3>
+                    دسترسی سریع
+                </h3>
 
                 <ul>
 
                     <li>
-                        <a href="#about">درباره انجمن</a>
+                        <a href="#about">
+                            درباره انجمن
+                        </a>
                     </li>
 
                     <li>
-                        <a href="#members">اعضای انجمن</a>
+                        <a href="#members">
+                            اعضای انجمن
+                        </a>
                     </li>
 
                     <li>
-                        <a href="#activities">فعالیت‌ها</a>
+                        <a href="#activities">
+                            فعالیت‌ها
+                        </a>
                     </li>
 
                     <li>
-                        <a href="#location">موقعیت</a>
+                        <a href="#location">
+                            موقعیت
+                        </a>
                     </li>
 
                 </ul>
@@ -1622,7 +1875,9 @@
 
             <div>
 
-                <h3>رسانه‌های انجمن</h3>
+                <h3>
+                    رسانه‌های انجمن
+                </h3>
 
                 <ul>
 
@@ -1646,12 +1901,13 @@
 
             </div>
 
+
         </div>
 
 
         <div class="copyright">
 
-            © ۱۴۰۳ تا ۱۴۰۵ —
+            © ۱۴۰۵ —
             انجمن کتابداری پایگاه بسیج شهید آوینی
             | تمامی حقوق محفوظ است.
 
@@ -1671,7 +1927,9 @@
     id="backTop"
     onclick="window.scrollTo({top:0, behavior:'smooth'})"
     aria-label="بازگشت به بالا">
+
     ↑
+
 </button>
 
 
@@ -1683,7 +1941,8 @@
 
     function toggleMenu() {
 
-        const menu = document.getElementById("navLinks");
+        const menu =
+            document.getElementById("navLinks");
 
         menu.classList.toggle("active");
 
@@ -1692,17 +1951,19 @@
 
     /* بستن منو پس از کلیک */
 
-    document.querySelectorAll(".nav-links a").forEach(link => {
+    document
+        .querySelectorAll(".nav-links a")
+        .forEach(link => {
 
-        link.addEventListener("click", () => {
+            link.addEventListener("click", () => {
 
-            document
-                .getElementById("navLinks")
-                .classList.remove("active");
+                document
+                    .getElementById("navLinks")
+                    .classList.remove("active");
+
+            });
 
         });
-
-    });
 
 
     /* =========================
@@ -1740,7 +2001,9 @@
                     if (entry.isIntersecting) {
 
                         entry.target.style.opacity = "1";
-                        entry.target.style.transform = "translateY(0)";
+
+                        entry.target.style.transform =
+                            "translateY(0)";
 
                     }
 
@@ -1754,11 +2017,16 @@
 
 
     document
-        .querySelectorAll(".member, .activity, .info-item, .channel")
+        .querySelectorAll(
+            ".member, .activity, .info-item, .channel"
+        )
         .forEach(element => {
 
             element.style.opacity = "0";
-            element.style.transform = "translateY(20px)";
+
+            element.style.transform =
+                "translateY(20px)";
+
             element.style.transition =
                 "opacity .6s ease, transform .6s ease";
 
